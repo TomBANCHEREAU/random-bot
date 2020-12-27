@@ -4,7 +4,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const Client = new (require('discord.js').Client)();
 const eventToPromise = require('event-to-promise');
-const modules = require('./modules.js');
+const modules = require('./modules');
 
 async function start() {
   if (!process.env.TOKEN) {
