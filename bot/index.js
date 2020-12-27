@@ -11,7 +11,7 @@ async function start() {
     throw 'The discord bot token need to be provided in order to start the application'
   }
   await modules.start({ Client })
-  await Client.login(process.env.TOKEN);
+  Client.login(process.env.TOKEN);
   await eventToPromise(Client, 'ready');
   console.log(`Logged in as ${Client.user.tag}!`);
 }

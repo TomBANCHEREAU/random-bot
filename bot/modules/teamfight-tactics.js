@@ -4,10 +4,6 @@ const Discord = require('discord.js');
 
 
 
-const singleCommand = (msg) => {
-  msg.reply(traits[new RegExp('pbe').test(msg) ? 'pbe' : 'live'][Math.floor(Math.random() * originAndClass.length)])
-}
-
 const squadCommand = async function (msg) {
   // check if the message has been sent on a guild
   if (!msg.guild) return
@@ -17,6 +13,7 @@ const squadCommand = async function (msg) {
     new Discord.MessageEmbed()
       .setTitle('TFT Squad Randomizer')
       .setColor(0xFFAA00)
+      .setThumbnail('https://1.bp.blogspot.com/-GRW2EI8affI/XUIjCzbiUHI/AAAAAAABWpo/eFTfkgLeAEMeJR9wL3BWzca0EjIhHM5oQCLcBGAs/s1600/4275.jpg')
       .addField('requested by ' + (msg.guild.member(msg.author).nickname || msg.author.username), 'React with 🖐️ to participate')
       .setFooter('React with ❌ to cancel or ✅ to start the randomization')
   )
@@ -48,6 +45,8 @@ const squadCommand = async function (msg) {
       new Discord.MessageEmbed()
         .setTitle("TFT Squad Randomizer")
         .setColor(0xFFAA00)
+        .setThumbnail('https://1.bp.blogspot.com/-GRW2EI8affI/XUIjCzbiUHI/AAAAAAABWpo/eFTfkgLeAEMeJR9wL3BWzca0EjIhHM5oQCLcBGAs/s1600/4275.jpg')
+
         .addField("RESULTS :",
           players.map((user) => (msg.guild.member(user).nickname || user.username) + ' : ' + randomizedTraits.shift()).join('\n')
         )
@@ -82,8 +81,7 @@ const squadCommand = async function (msg) {
 
 
 const messageListener = (message) => {
-  if (new RegExp('^!tft').test(message)) singleCommand(message)
-  if (new RegExp('^!tfts').test(message)) squadCommand(message)
+  if (new RegExp('^!tft').test(message)) squadCommand(message)
 }
 
 async function start({ Client }) {
