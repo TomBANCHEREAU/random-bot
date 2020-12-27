@@ -1,16 +1,13 @@
-const modules = {
-}
+const modules = [
+  require('./teamfight-tactics')
+]
 
 async function start({ Client }) {
-  for (const module in Object.keys(modules)) {
-    await modules[module].start({ Client })
-  }
+  await Promise.all(modules.map(m => m.start({ Client })))
 }
 
 async function stop({ Client }) {
-  for (const module in Object.keys(modules)) {
-    await modules[module].stop({ Client })
-  }
+  await Promise.all(modules.map(m => m.stop({ Client })))
 }
 
 module.exports = { start, stop }
