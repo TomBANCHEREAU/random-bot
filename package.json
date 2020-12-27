@@ -1,0 +1,17 @@
+{
+  "name": "bot-random",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "dev": "nodemon ."
+  },
+  "author": "Tom BANCHEREAU <tom.banchereau@viacesi.fr>",
+  "license": "ISC"
+}
