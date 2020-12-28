@@ -1,6 +1,7 @@
 const modules = [
   require('./teamfight-tactics'),
-  require('./alcohol')
+  require('./alcohol'),
+  require('./among-us')
 ]
 
 async function start({ Client }) {
