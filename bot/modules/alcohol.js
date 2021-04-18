@@ -1,4 +1,4 @@
-const alcohol = require('../../ressources/alcohol')
+const alcohol = require('../../resources/alcohol')
 
 
 const messageListener = (message) => {
