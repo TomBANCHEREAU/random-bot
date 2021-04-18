@@ -1,5 +1,5 @@
 
-const traits = require('../../ressources/teamfight-tactics/traits')
+const traits = require('../../resources/teamfight-tactics/traits')
 const Discord = require('discord.js');
 
 
